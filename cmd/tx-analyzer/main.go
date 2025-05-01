@@ -24,7 +24,7 @@ func main() {
 
 	var tx *types.Transaction
 	var err error
-	if blockhash != nil {
+	if blockhash != nil && *blockhash != "" {
 		tx, err = core.GetRawTransaction(*txid, *blockhash)
 	} else {
 		tx, err = core.GetRawTransaction(*txid)
